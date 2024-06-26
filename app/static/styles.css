@@ -1,0 +1,92 @@
+body {
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Grow to fill remaining vertical space */
+}
+
+
+h1 {
+    text-align: center;
+    margin-top: 100px;
+    font-size: 2em;
+    color: #333;
+    font-family: 'Roboto'; /* Specify the font family */
+    font-weight: bold; /* Make the text bold */
+}
+
+
+form {
+    width: 330px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input {
+    width: calc(100% - 22px); /* Adjust for padding */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #516da6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #afc9de;
+}
+
+/* Flash message styles */
+.success {
+    color: green;
+    text-align: center;
+}
+
+.danger {
+    color: red;
+    text-align: center;
+}
+
+.center-links {
+    text-align: center;
+}
+
+footer {
+    background-color: #deb2af;
+    color: #f2f2f0;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+/* Footer content */
+.footer-content {
+    max-width: 1200px; /* Adjust width as needed */
+    margin: 0 auto; /* Center align horizontally */
+}

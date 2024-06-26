@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<html>
+<body>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+
+    {% for category, message in messages %}
+    <h1 class="{{ category }}">{{ message }}</h1>
+    {% endfor %}
+
+{% endif %}
+{% endwith %}
+<h1>REGISTER</h1>
+<form action="{{ url_for('routes.add') }}" method="POST">
+    <div>Name: <input type="text" name="name" placeholder="Enter Name" required></div><br><br>
+    <div>Email: <input type="email" name="email" placeholder="Enter Email" required></div><br><br>
+    <div>Password: <input type="password" name="password" placeholder="Enter Password" required></div><br><br>
+    <div>Confirm Password: <input type="password" name="password1" placeholder="Confirm Password" required></div><br><br>
+
+    <input type="submit" value="Register"><br><br>
+
+</form>
+
+
+</body>
+</html>
+{% endblock %}

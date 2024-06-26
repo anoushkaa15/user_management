@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<html>
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+                {% for category, message in messages %}
+                    <h1 class="{{ category }}">{{ message }}</h1>
+                {% endfor %}
+        {% endif %}
+    {% endwith %}
+<div class="center-links">
+    <h1>LOGIN:  </h1>
+    <a href="{{ url_for('routes.login') }}">Login</a><br>
+    <h1>REGISTER:  </h1>
+    <a href="{{ url_for('routes.add') }}">Register</a>
+</div>
+</body>
+</html>
+{% endblock %}

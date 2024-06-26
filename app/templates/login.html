@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<html>
+<body>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+<h1 class="{{ category }}">{{ message }}</h1>
+{% endfor %}
+{% endif %}<div class="footer-content">
+    <a href="{{ url_for('routes.home') }}">Click here to go to the home page</a>
+</div>
+
+{% endwith %}
+<h1>LOGIN</h1>
+<form action="{{ url_for('routes.login') }}" method="POST">
+    Email: <input type="email" name="email" placeholder="Enter Email" required><br><br>
+    Password: <input type="password" name="password" placeholder="Enter Password" required><br><br>
+    <input type="submit" value="Login"><br><br>
+
+</form>
+</body>
+</html>
+{% endblock %}
